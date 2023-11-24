@@ -1,0 +1,60 @@
+[
+{
+    "contestName": "C Coding Challenge",
+    "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+    "description": "Put your C programming skills to the test in this coding challenge!",
+    "participationCount": 25,
+    "contestDetails": "The C Coding Challenge is dedicated to testing participants' proficiency in C programming. Challenges will cover topics such as data structures, algorithms, and low-level programming. Demonstrate your ability to write efficient and error-free C code.",
+    "contestPrize": "C Programming Guru: $1200, Most Elegant Solution: $800, Best Algorithm Implementation: $500",
+    "deadlineTime": "2023-12-12T19:30:00Z"
+    },      
+    {
+      "contestName": "Web Development Hackathon",
+      "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+      "description": "Build innovative web applications in this 24-hour hackathon!",
+      "participationCount": 18,
+      "contestDetails": "Participants will develop web applications based on a given theme. Creativity, functionality, and innovation will be key criteria for judging. The hackathon will cover front-end and back-end development, and participants are encouraged to use the latest technologies. Showcase your web development skills and create solutions that stand out.",
+      "contestPrize": "Best Web App: $1500, Most Innovative Design: $1000, Audience Choice: $500",
+      "deadlineTime": "2023-11-30T22:00:00Z"
+    },
+    {
+        "contestName": "Algorithm Masters",
+        "image": "https://lh4.googleusercontent.com/bdRQQjQOCrnuaGuxyHALiIGVXT6hywNT9nsGHaftVJN01aqooX1d2xu8RHuwBT6uFemFLWwahPi7i5jkt3S4dqlcrLOd6C_sw-WrC97LyqgKHzxtl3JN7VrIUH7LOA",
+        "description": "An intense algorithmic competition for advanced coders!",
+        "participationCount": 15,
+        "contestDetails": "Algorithm Masters is a high-level coding competition designed for experienced programmers. Participants will face challenging problems related to advanced algorithms, optimization, and computational complexity. Solve intricate puzzles and demonstrate your algorithmic expertise.",
+        "contestPrize": "Grand Prize: $2000, Runner-up: $1000, Special Mention: $500",
+        "contestWinner": {
+        "name": "Alex Johnson",
+        "image": "https://example.com/winner_alex_johnson.jpg"
+        },
+        "deadlineTime": "2023-12-10T20:30:00Z"
+    },
+    {
+        "contestName": "Mobile App Hackfest",
+        "image": "https://www.shutterstock.com/image-vector/hackathon-banner-web-icon-vector-260nw-2133686197.jpg",
+        "description": "Create innovative mobile apps in this coding extravaganza!",
+        "participationCount": 17,
+        "contestDetails": "Mobile App Hackfest challenges participants to build cutting-edge mobile applications. From UI/UX design to backend integration, showcase your skills in mobile development. Whether you're an iOS or Android enthusiast, this hackfest welcomes all mobile app creators.",
+        "contestPrize": "Best Mobile App: $1500, Most User-Friendly: $1000, Creative Design: $500",
+        "contestWinner": {
+        "name": "Chris Taylor",
+        "image": "https://example.com/winner_chris_taylor.jpg"
+        },
+        "deadlineTime": "2023-12-05T23:59:00Z"
+    },
+    {
+        "contestName": "Data Science Showdown",
+        "image": "https://repository-images.githubusercontent.com/265904235/46eef600-9bab-11ea-87d9-ff5e73c39b97",
+        "description": "Unleash your data science skills in this thrilling competition!",
+        "participationCount": 13,
+        "contestDetails": "Data Science Showdown is a battle of analytics and insights. Participants will analyze datasets, create predictive models, and present actionable insights. From machine learning to data visualization, this contest explores the diverse aspects of data science.",
+        "contestPrize": "Top Data Scientist: $2000, Best Visualization: $1000, Most Insightful Analysis: $500",
+        "contestWinner": {
+        "name": "Emily Brown",
+        "image": "https://example.com/winner_emily_brown.jpg"
+        },
+        "deadlineTime": "2023-12-18T17:30:00Z"
+    }
+]
+  
