@@ -1,17 +1,26 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../Component/Shared/GoogleLogin/GoogleLogin";
 import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => { 
     const { register,handleSubmit, formState: { errors }, } = useForm();
     const {logInUser} = useAuth();
     const navegate = useNavigate()
+    const location = useLocation()
 
     const onSubmit = (data) => {
       logInUser(data.email,data.password)
       .then(()=>{
-        navegate('/')
+        navegate(location?.state ? location.state : '/')
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Login User Sucessfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
       })
       .catch(err=>{
         console.log(err.message);

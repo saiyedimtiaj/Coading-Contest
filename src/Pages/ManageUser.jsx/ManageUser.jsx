@@ -10,7 +10,7 @@ const ManageUser = () => {
           return res.data
       }
     })
-    console.log(users);
+
 
   return (
     <div>
@@ -41,15 +41,9 @@ const ManageUser = () => {
                     <th>
                         {user?.email}
                     </th>
-                    <tr>
-                        {
-                            user?.role === 'admin' ? <p className="font-semibold">Admin</p> : <select defaultValue={user?.role} className="border border-black px-3 py-2 font-semibold">
-                                <option value="user">User</option>
-                                <option value="creator">Creator</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        }
-                    </tr>
+                       <th>
+                        
+                       </th>
                 </tr>)
             }
            

@@ -1,9 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../Component/Shared/GoogleLogin/GoogleLogin";
 import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 const image_Hosting_Key = import.meta.env.VITE_Imgbb_Secret;
 const image_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_Hosting_Key}`
 
@@ -13,6 +14,7 @@ const Register = () => {
     const {emailRegister,profileUpdate} = useAuth();
     const navegate = useNavigate();
     const axiosPublic = useAxiosPublic()
+    const location = useLocation()
 
     const onSubmit = (data) => {
         const name = data.name
@@ -29,7 +31,14 @@ const Register = () => {
             emailRegister(email,password)
             .then(()=>{
                 profileUpdate(name,image)
-                navegate('/')
+                navegate(location?.state ? location.state : '/')
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Account Register Sucessfully",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
                 const userInfo = {
                   name:name,
                   email:email,

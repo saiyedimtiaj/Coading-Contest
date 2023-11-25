@@ -2,10 +2,10 @@ import { MdOutlineMenu } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useRole from "../../Hooks/useRole";
 
-const Sidebar = () => { 
-  const [isAdmin]= useRole()
-  
-  const userRole = isAdmin?.role
+const Sidebar = () => {
+  const [isAdmin] = useRole();
+
+  const userRole = isAdmin?.role;
 
   return (
     <div className="drawer lg:drawer-open ">
@@ -25,7 +25,10 @@ const Sidebar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 space-y-1 w-80 min-h-full text-lg bg-base-200 text-base-content">
+        <ul className="menu p-4 space-y-1 w-80 min-h-full text-lg bg-black text-white ">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
           {userRole === "admin" ? (
             <>
               {/* admin router */}
@@ -60,7 +63,9 @@ const Sidebar = () => {
                 <NavLink to="/dashboard/addcontest">Add Contest</NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/createdcontest">Created Contest</NavLink>
+                <NavLink to="/dashboard/createdcontest">
+                  Created Contest
+                </NavLink>
               </li>
             </>
           )}

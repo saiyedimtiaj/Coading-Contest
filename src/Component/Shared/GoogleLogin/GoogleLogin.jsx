@@ -1,18 +1,27 @@
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const GoogleLogin = () => {
   const {googleLogin} = useAuth();
   const axiosPublic = useAxiosPublic();
   const navegate = useNavigate();
+  const location = useLocation()
 
   const handleGoogle = () => {
     googleLogin()
     .then(res=>{
       console.log(res.user);
-      navegate('/')
+      navegate(location?.state ? location.state : '/')
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Login User Sucessfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
       const userInfo ={
         name:res.user.displayName,
         email:res.user.email,

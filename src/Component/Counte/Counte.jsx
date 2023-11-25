@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 
 
@@ -8,7 +7,9 @@ const Counte = () => {
     const [mins,setMins] = useState(0)
     const [secs,setSecs] = useState(0)
 
-    const dedline = 'November ,27 ,2023'
+    const dedline = '2023-11-29'
+    // const timeing = Date.parse(dedline)
+
 
     const getTime = () => {
         const time = Date.parse(dedline)-Date.now()

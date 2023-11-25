@@ -12,12 +12,14 @@ import RegisteredContest from "../Pages/RegisteredContest/RegisteredContest";
 import WinningContest from "../Pages/WinningContest/WinningContest";
 import MyProfile from "../Pages/MyProfile/MyProfile";
 import AddContest from "../Pages/AddContest/AddContest";
+import PageError from "../Pages/PageError/PageError";
 
 
 const Routes = createBrowserRouter([
     {
         path:'/',
         element:<MainLayout/>,
+        errorElement:<PageError/>,
         children:[
             {
                 path:'/',
