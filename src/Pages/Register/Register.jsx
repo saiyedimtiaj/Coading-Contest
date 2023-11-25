@@ -3,6 +3,7 @@ import GoogleLogin from "../../Component/Shared/GoogleLogin/GoogleLogin";
 import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const image_Hosting_Key = import.meta.env.VITE_Imgbb_Secret;
 const image_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_Hosting_Key}`
 
@@ -10,7 +11,8 @@ const image_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_Hosting_Ke
 const Register = () => {
     const { register,handleSubmit,formState: { errors }, } = useForm();
     const {emailRegister,profileUpdate} = useAuth();
-    const navegate = useNavigate()
+    const navegate = useNavigate();
+    const axiosPublic = useAxiosPublic()
 
     const onSubmit = (data) => {
         const name = data.name
@@ -28,6 +30,16 @@ const Register = () => {
             .then(()=>{
                 profileUpdate(name,image)
                 navegate('/')
+                const userInfo = {
+                  name:name,
+                  email:email,
+                  image:image,
+                  role:'admin'
+                }
+                axiosPublic.post('/users',userInfo)
+                .then(res=>{
+                  console.log(res.data);
+                })
             })
             .catch(err=>{
                 console.log(err.message);

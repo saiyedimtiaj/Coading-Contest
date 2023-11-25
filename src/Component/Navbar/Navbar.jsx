@@ -20,12 +20,12 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/about"
+        to="/allcontest"
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "border-b-2 border-green-600" : ""
         }
       >
-        About
+        All Contest
       </NavLink>
     </>
   );
@@ -83,9 +83,9 @@ const Navbar = () => {
                   </p>
                 </li>
                 <li className="my-3">
-                  <p className="hover:bg-blue-950 px-2 py-2 rounded-none">
+                 <Link to='/dashboard' className="hover:bg-blue-950 px-2 py-2 rounded-none">
                     Dashboard
-                  </p>
+                 </Link>
                 </li>
                 <button onClick={handleLogout} className="bg-blue-600 hover:bg-blue-700 text-white py-2 w-full font-medium">
                   Logout

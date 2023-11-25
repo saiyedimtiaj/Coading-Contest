@@ -1,60 +1,104 @@
 [
-{
-    "contestName": "C Coding Challenge",
-    "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
-    "description": "Put your C programming skills to the test in this coding challenge!",
-    "participationCount": 25,
-    "contestDetails": "The C Coding Challenge is dedicated to testing participants' proficiency in C programming. Challenges will cover topics such as data structures, algorithms, and low-level programming. Demonstrate your ability to write efficient and error-free C code.",
-    "contestPrize": "C Programming Guru: $1200, Most Elegant Solution: $800, Best Algorithm Implementation: $500",
-    "deadlineTime": "2023-12-12T19:30:00Z"
-    },      
     {
-      "contestName": "Web Development Hackathon",
-      "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
-      "description": "Build innovative web applications in this 24-hour hackathon!",
-      "participationCount": 18,
-      "contestDetails": "Participants will develop web applications based on a given theme. Creativity, functionality, and innovation will be key criteria for judging. The hackathon will cover front-end and back-end development, and participants are encouraged to use the latest technologies. Showcase your web development skills and create solutions that stand out.",
-      "contestPrize": "Best Web App: $1500, Most Innovative Design: $1000, Audience Choice: $500",
-      "deadlineTime": "2023-11-30T22:00:00Z"
+        "contestName": "SocialApp Challenge",
+        "category": "App Development",
+        "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+        "description": "Build the next generation of social networking apps in this mobile app development challenge!",
+        "participationCount": 25,
+        "contestDetails": "SocialApp Challenge focuses on developing innovative social networking applications for mobile devices. Participants will create feature-rich apps with user profiles, real-time messaging, and interactive content sharing.",
+        "contestPrize": 200,
+        "deadlineTime": "2023-12-17T21:15:00Z"
     },
     {
-        "contestName": "Algorithm Masters",
-        "image": "https://lh4.googleusercontent.com/bdRQQjQOCrnuaGuxyHALiIGVXT6hywNT9nsGHaftVJN01aqooX1d2xu8RHuwBT6uFemFLWwahPi7i5jkt3S4dqlcrLOd6C_sw-WrC97LyqgKHzxtl3JN7VrIUH7LOA",
-        "description": "An intense algorithmic competition for advanced coders!",
-        "participationCount": 15,
-        "contestDetails": "Algorithm Masters is a high-level coding competition designed for experienced programmers. Participants will face challenging problems related to advanced algorithms, optimization, and computational complexity. Solve intricate puzzles and demonstrate your algorithmic expertise.",
-        "contestPrize": "Grand Prize: $2000, Runner-up: $1000, Special Mention: $500",
-        "contestWinner": {
-        "name": "Alex Johnson",
-        "image": "https://example.com/winner_alex_johnson.jpg"
-        },
-        "deadlineTime": "2023-12-10T20:30:00Z"
+        "contestName": "FitApp Innovate",
+        "category": "App Development",
+        "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+        "description": "Revolutionize health and fitness with your mobile app in this development challenge!",
+        "participationCount": 25,
+        "contestDetails": "FitApp Innovate challenges participants to create health and fitness applications for mobile platforms. Build apps that promote exercise, track wellness goals, and provide personalized health insights.",
+        "contestPrize": 180,
+        "deadlineTime": "2023-12-09T20:45:00Z"
     },
     {
-        "contestName": "Mobile App Hackfest",
-        "image": "https://www.shutterstock.com/image-vector/hackathon-banner-web-icon-vector-260nw-2133686197.jpg",
-        "description": "Create innovative mobile apps in this coding extravaganza!",
-        "participationCount": 17,
-        "contestDetails": "Mobile App Hackfest challenges participants to build cutting-edge mobile applications. From UI/UX design to backend integration, showcase your skills in mobile development. Whether you're an iOS or Android enthusiast, this hackfest welcomes all mobile app creators.",
-        "contestPrize": "Best Mobile App: $1500, Most User-Friendly: $1000, Creative Design: $500",
-        "contestWinner": {
-        "name": "Chris Taylor",
-        "image": "https://example.com/winner_chris_taylor.jpg"
-        },
-        "deadlineTime": "2023-12-05T23:59:00Z"
+        "contestName": "ShopifyApp Quest",
+        "category": "App Development",
+        "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+        "description": "Transform the e-commerce experience with your mobile app in this development quest!",
+        "participationCount": 35,
+        "contestDetails": "ShopifyApp Quest focuses on creating cutting-edge e-commerce applications for mobile platforms. Participants will design apps with seamless product browsing, secure transactions, and personalized shopping experiences.",
+        "contestPrize": 250,
+        "deadlineTime": "2023-12-14T22:00:00Z"
     },
     {
-        "contestName": "Data Science Showdown",
-        "image": "https://repository-images.githubusercontent.com/265904235/46eef600-9bab-11ea-87d9-ff5e73c39b97",
-        "description": "Unleash your data science skills in this thrilling competition!",
-        "participationCount": 13,
-        "contestDetails": "Data Science Showdown is a battle of analytics and insights. Participants will analyze datasets, create predictive models, and present actionable insights. From machine learning to data visualization, this contest explores the diverse aspects of data science.",
-        "contestPrize": "Top Data Scientist: $2000, Best Visualization: $1000, Most Insightful Analysis: $500",
-        "contestWinner": {
-        "name": "Emily Brown",
-        "image": "https://example.com/winner_emily_brown.jpg"
-        },
-        "deadlineTime": "2023-12-18T17:30:00Z"
-    }
+        "contestName": "EduApp Builder",
+        "category": "App Development",
+        "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+        "description": "Shape the future of education with your mobile app in this development challenge!",
+        "participationCount": 20,
+        "contestDetails": "EduApp Builder challenges participants to create educational applications for mobile devices. Develop apps that facilitate learning, provide interactive lessons, and engage users in educational content.",
+        "contestPrize": 200,
+        "deadlineTime": "2023-12-12T19:30:00Z"
+    },
+    {
+        "contestName": "Travel Explorer App",
+        "category": "App Development",
+        "image": "https://i.ytimg.com/vi/5JPtTghDcTY/maxresdefault.jpg",
+        "description": "Enhance the travel experience with your mobile app in this development challenge!",
+        "participationCount": 30,
+        "contestDetails": "Travel Explorer App challenges participants to create innovative travel applications for mobile platforms. Build apps that assist users in planning trips, discovering destinations, and sharing travel experiences.",
+        "contestPrize": 180,
+        "deadlineTime": "2023-12-10T21:30:00Z"
+    },
+    {
+        "contestName": "ImageNet Challenge",
+        "category": "Machine Learning",
+        "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+        "description": "Showcase your machine learning prowess in image classification with the ImageNet Challenge!",
+        "participationCount": 150,
+        "contestDetails": "The ImageNet Challenge focuses on image classification tasks using machine learning. Participants will work with large datasets and advanced models to accurately classify images into predefined categories.",
+        "contestPrize": 1500,
+        "deadlineTime": "2023-12-22T20:45:00Z"
+      },
+      {
+        "contestName": "NLP Mastermind Challenge",
+        "category": "Machine Learning",
+        "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+        "description": "Dive into the world of Natural Language Processing (NLP) with this challenging competition!",
+        "participationCount": 120,
+        "contestDetails": "The NLP Mastermind Challenge challenges participants to solve complex problems in natural language understanding and processing. From sentiment analysis to language translation, showcase your skills in NLP.",
+        "contestPrize": 1200,
+        "deadlineTime": "2023-12-18T22:00:00Z"
+      },
+      {
+        "contestName": "Predictive Insights Challenge",
+        "category": "Machine Learning",
+        "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+        "description": "Unleash your skills in predictive analytics in this machine learning competition!",
+        "participationCount": 100,
+        "contestDetails": "The Predictive Insights Challenge focuses on predicting future trends and outcomes using machine learning. Participants will work with real-world datasets to build models that provide valuable predictive insights.",
+        "contestPrize": 1000,
+        "deadlineTime": "2023-12-15T21:30:00Z"
+      },
+      {
+        "contestName": "Reinforcement Learning Rumble",
+        "category": "Machine Learning",
+        "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+        "description": "Navigate the world of reinforcement learning in this thrilling competition!",
+        "participationCount": 80,
+        "contestDetails": "Reinforcement Learning Rumble challenges participants to develop agents that can learn and make decisions through interaction with an environment. From game playing to robotics, showcase your skills in reinforcement learning.",
+        "contestPrize": 800,
+        "deadlineTime": "2023-12-20T19:45:00Z"
+      },
+      {
+        "contestName": "Anomaly Detectives Challenge",
+        "category": "Machine Learning",
+        "image": "https://i.ibb.co/mBNNrk2/Capture2.png",
+        "description": "Detect anomalies with precision in this machine learning competition!",
+        "participationCount": 90,
+        "contestDetails": "The Anomaly Detectives Challenge focuses on developing algorithms for anomaly detection in various datasets. Participants will work on identifying unusual patterns and outliers in data.",
+        "contestPrize": 900,
+        "deadlineTime": "2023-12-17T20:00:00Z"
+      }
+           
 ]
   

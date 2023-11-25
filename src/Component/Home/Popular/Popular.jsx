@@ -1,16 +1,23 @@
+import { Link } from "react-router-dom";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import {useQuery} from '@tanstack/react-query'
+import useAuth from "../../../Hooks/useAuth";
 
 const Popular = () => {
     const axiosPublic = useAxiosPublic();
-    const {  data:courses=[] } = useQuery({
+    const {loading} = useAuth()
+    const {  data:courses=[],isPending } = useQuery({
         queryKey: ['allcourse'],
+        enabled: !loading,
         queryFn:  async () => {
-            const res = await axiosPublic.get('/courses?sortby=participationCount$limit=5')
+            const res = await axiosPublic.get('/courses?sortby=participationCount&limit=5')
             return res.data
         }
       })
-      console.log(courses);
+
+      if(isPending){
+        return <p>Loading.....</p>
+      }
     
     return (
         <div className="container mx-auto px-4 mt-20">
@@ -24,7 +31,9 @@ const Popular = () => {
                             <h1 className="text-xl font-semibold">{course?.contestName}</h1>
                             <p>{course?.contestDetails.slice(0,60)}...</p>
                             <h1 className="text-lg font-semibold">Attempted : {course?.participationCount}</h1>
+                            <Link to={`/course/${course?._id}`}>
                             <button className="bg-blue-600 text-white px-6 py-1.5 font-medium">Datails</button>
+                            </Link>
                         </div>
                     </div>)
                 }
