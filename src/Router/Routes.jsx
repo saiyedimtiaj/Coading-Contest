@@ -13,6 +13,8 @@ import WinningContest from "../Pages/WinningContest/WinningContest";
 import MyProfile from "../Pages/MyProfile/MyProfile";
 import AddContest from "../Pages/AddContest/AddContest";
 import PageError from "../Pages/PageError/PageError";
+import CreatedContest from "../Pages/CreatedContest/CreatedContest";
+import Update from "../Pages/Update/Update";
 
 
 const Routes = createBrowserRouter([
@@ -32,7 +34,7 @@ const Routes = createBrowserRouter([
             {
                 path:'/allcontest',
                 element:<AllContest/>
-            }
+            },
         ]
     },
     {
@@ -78,7 +80,12 @@ const Routes = createBrowserRouter([
                 element:<AddContest/>
             },
             {
-                path:'createdcontest'
+                path:'createdcontest',
+                element:<CreatedContest/>
+            },
+            {
+                path:'createdcontest/update/:id',
+                element:<Update/>
             }
         ]
     }

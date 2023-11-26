@@ -57,21 +57,21 @@ const AuthProvider = ({children}) => {
             setUser(currentUser);
             const userEmail = {email:currentUser?.email};
             setLoading(false)
-            if(currentUser){
-                axiosPublic.post('/jwt',userEmail)
-                .then(res=>{
-                    console.log(res.data);
-                })
-                .catch(err=>{
-                    console.log(err.message);
-                })
-            }
-            else{
-                axiosPublic.post('/logout')
-                .then(res=>{
-                    console.log(res.data);
-                })
-            }
+            // if(currentUser){
+            //     axiosPublic.post('/jwt',userEmail)
+            //     .then(res=>{
+            //         console.log(res.data);
+            //     })
+            //     .catch(err=>{
+            //         console.log(err.message);
+            //     })
+            // }
+            // else{
+            //     axiosPublic.post('/logout')
+            //     .then(res=>{
+            //         console.log(res.data);
+            //     })
+            // }
         })
         return () => {
             return unSubscribe()

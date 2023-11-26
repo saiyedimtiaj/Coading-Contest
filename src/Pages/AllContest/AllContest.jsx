@@ -38,7 +38,7 @@ const AllContest = () => {
                         <img className="w-full md:w-1/2 h-full" src={course?.image} alt="" />
                         <div className="px-2 py-4 space-y-1">
                             <h1 className="text-xl font-semibold">{course?.contestName}</h1>
-                            <p>{course?.contestDetails.slice(0,60)}...</p>
+                            {/* <p>{course?.contestDetails.slice(0,60)}...</p> */}
                             <h1 className="text-lg font-semibold">Attempted : {course?.participationCount}</h1>
                             <Link to={`/course/${course?._id}`}>
                             <button className="bg-blue-600 text-white px-6 py-1.5 font-medium">Datails</button>
