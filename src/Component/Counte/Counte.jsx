@@ -1,29 +1,18 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+
+import { useEffect } from "react";
 
 
-const Counte = () => {
-    const [days,setDays] = useState(0)
-    const [hours,setHours] = useState(0)
-    const [mins,setMins] = useState(0)
-    const [secs,setSecs] = useState(0)
 
-    const dedline = '2023-11-29'
+const Counte = ({days,hours,mins,secs,dedline,getTime}) => {
     // const timeing = Date.parse(dedline)
 
-
-    const getTime = () => {
-        const time = Date.parse(dedline)-Date.now()
-        setDays(Math.floor(time / (1000 * 60 * 60 * 24)))
-        setHours(Math.floor(time / (1000 * 60 * 60)%24))
-        setMins(Math.floor((time / 1000 / 60)%60))
-        setSecs(Math.floor((time / 1000 )%60))
-    }
 
    
     useEffect(()=>{
         const intervel = setInterval(()=>getTime(dedline),1000)
         return () => clearInterval(intervel)
-    },[])
+    },[dedline,getTime])
 
     return (
         <div>

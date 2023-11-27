@@ -31,11 +31,13 @@ const AddContest = () => {
         contestPrize:parseInt(data?.contestPrize),
         prizeMoney:parseInt(data?.prizeMoney),
         creatorEmail:user?.email,
+        creatorName:user?.displayName,
         creatorImage:user?.photoURL,
         status: 'panding'
       }
       axiosSecure.post('/courses',courseInfo)
       .then(res=>{
+        console.log(res.data);
         if(res.data?.insertedId){
           Swal.fire({
             position: "center",
@@ -45,6 +47,9 @@ const AddContest = () => {
             timer: 1500
           });
         }
+      })
+      .catch(err=>{
+        console.log(err.message);
       })
     })
   }
@@ -120,7 +125,8 @@ const AddContest = () => {
               className="select  w-full border-2 border-black"
             >
               <option value='App Development'>App Development</option>
-              <option value='Machine Learning'>Machine Learning</option>
+              <option value='UI/UX Development'>UI/UX Development</option>
+              <option value='Web Development'>Web Development</option>
             </select>
                  {errors.category && <span>This field is required</span>}
           </div>

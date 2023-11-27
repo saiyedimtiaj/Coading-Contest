@@ -16,7 +16,8 @@ const Banner = () => {
       return res.data;
     },
   });
-  console.log(courses);
+
+  const filterCourse = courses?.filter(course=>course.status !== 'panding')
 
   const handleInput = (event) => {
     setActive(true);
@@ -55,7 +56,7 @@ const Banner = () => {
               <MdOutlineCancel />
             </button>
           </div>
-          {courses?.map((course) => (
+          {filterCourse?.map((course) => (
             <Link key={course._id} to={`/course/${course?._id}`}>
               <div
                 key={course._id}

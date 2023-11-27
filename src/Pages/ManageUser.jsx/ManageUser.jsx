@@ -1,25 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import ManageUserRow from "./ManageUserRow";
 
 const ManageUser = () => {
-    const axiosSecure = useAxiosSecure()
-    const {  data:users=[] } = useQuery({
-      queryKey: ['allusers'],
-      queryFn:  async () => {
-          const res = await axiosSecure.get(`/users`)
-          return res.data
-      }
-    })
-
+  const axiosSecure = useAxiosSecure();
+  const { data: users = [],refetch } = useQuery({
+    queryKey: ["allusers"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/users`);
+      return res.data;
+    },
+  });
 
   return (
-    <div>
+    <>
       <h1 className="text-3xl font-semibold text-center my-8">
         Manage All Usere
       </h1>
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th>Image</th>
@@ -29,28 +28,13 @@ const ManageUser = () => {
             </tr>
           </thead>
           <tbody>
-            
-            {
-                users?.map(user=><tr key={user._id}>
-                    <th>
-                        <img className="h-10" src={user?.image} alt="" />
-                    </th>
-                    <th>
-                        {user?.name}
-                    </th>
-                    <th>
-                        {user?.email}
-                    </th>
-                       <th>
-                        
-                       </th>
-                </tr>)
-            }
-           
+            {users?.map((user) => (
+              <ManageUserRow key={user?._id} refetch={refetch} user={user} />
+            ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -87,6 +87,7 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
 
      try{
         const res = await axiosSecure.post('/bookings',paymentInfo)
+        navegate('/dashboard/registeredcontest')
         if(res.data?.insertedId){
             Swal.fire({
               position: "center",
@@ -106,7 +107,6 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
         console.log(err.message);
     }
     finally{
-        navegate('/dashboard/registeredcontest')
         setProcessing(false)
      }
 

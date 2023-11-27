@@ -7,7 +7,7 @@ const useRole = () => {
   const { user,loading } = useAuth();
 
 
-  const { data: isAdmin = [] } = useQuery({
+  const { data: isAdmin = [],isPending } = useQuery({
     queryKey: ["singleUser",user],
     enabled: !loading,
     queryFn: async () => {
@@ -15,7 +15,7 @@ const useRole = () => {
       return res.data;
     },
   });
-  return [isAdmin];
+  return [isAdmin,isPending];
 };
 
 export default useRole;

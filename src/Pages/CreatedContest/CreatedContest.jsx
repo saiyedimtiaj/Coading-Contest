@@ -62,6 +62,7 @@ const CreatedContest = () => {
               <th>Name</th>
               <th>Action</th>
               <th>Status</th>
+              <th>Submitions</th>
             </tr>
           </thead>
           <tbody>
@@ -83,6 +84,11 @@ const CreatedContest = () => {
                         }
                     </th>
                     <th><div className="badge badge-neutral">{course?.status}</div></th>
+                    <th>
+                        <Link to={`/dashboard/submition/${course?._id}`} className="badge badge-accent">
+                          See Submition
+                        </Link>
+                    </th>
                 </tr>)
             }
           </tbody>

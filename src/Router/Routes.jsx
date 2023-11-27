@@ -15,6 +15,7 @@ import AddContest from "../Pages/AddContest/AddContest";
 import PageError from "../Pages/PageError/PageError";
 import CreatedContest from "../Pages/CreatedContest/CreatedContest";
 import Update from "../Pages/Update/Update";
+import Submition from "../Pages/Submition/Submition";
 
 
 const Routes = createBrowserRouter([
@@ -86,6 +87,10 @@ const Routes = createBrowserRouter([
             {
                 path:'createdcontest/update/:id',
                 element:<Update/>
+            },
+            {
+                path:'submition/:id',
+                element:<Submition/>
             }
         ]
     }

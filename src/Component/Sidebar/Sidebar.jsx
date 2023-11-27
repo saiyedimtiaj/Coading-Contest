@@ -3,9 +3,13 @@ import { NavLink } from "react-router-dom";
 import useRole from "../../Hooks/useRole";
 
 const Sidebar = () => {
-  const [isAdmin] = useRole();
+  const [isAdmin,isPending] = useRole();
 
   const userRole = isAdmin?.role;
+
+  if(isPending){
+    return <p>......</p>
+  }
 
   return (
     <div className="drawer lg:drawer-open ">
@@ -39,8 +43,20 @@ const Sidebar = () => {
                 <NavLink to="/dashboard/managecontest">Manage Contest</NavLink>
               </li>
             </>
-          ) : userRole === "user" ? (
+          ) : userRole === "creator" ? (
             <>
+              {/* --------------------creator router------------------------------------------ */}
+              <li>
+                <NavLink to="/dashboard/addcontest">Add Contest</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/createdcontest">
+                  Created Contest
+                </NavLink>
+              </li>
+            </>
+          ) : (
+              <>
               {/* --------------------user router------------------------------------------ */}
               <li>
                 <NavLink to="/dashboard/registeredcontest">
@@ -54,18 +70,6 @@ const Sidebar = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/myprofile">My Profile</NavLink>
-              </li>
-            </>
-          ) : (
-            <>
-              {/* --------------------creator router------------------------------------------ */}
-              <li>
-                <NavLink to="/dashboard/addcontest">Add Contest</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/createdcontest">
-                  Created Contest
-                </NavLink>
               </li>
             </>
           )}

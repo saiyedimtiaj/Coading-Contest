@@ -15,11 +15,13 @@ const AllContest = () => {
         }
       })
 
-      const Allcategoryes = ["App Development","Machine Learning"];
+      const Allcategoryes = ["App Development","UI/UX Development","Web Development"];
 
       const handleCategory = (name) =>{
         setCategory(name)
       }
+
+      const filterCourse = courses?.filter(course=>course.status !== 'panding')
 
     return (
         <div className="max-w-7xl mx-auto">
@@ -34,7 +36,7 @@ const AllContest = () => {
                 </div>
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-5 my-5">
                 {
-                    courses?.map(course=><div key={course?._id} className="flex flex-col md:flex-row items-center  border-black border">
+                    filterCourse?.map(course=><div key={course?._id} className="flex flex-col md:flex-row items-center  border-black border">
                         <img className="w-full md:w-1/2 h-full" src={course?.image} alt="" />
                         <div className="px-2 py-4 space-y-1">
                             <h1 className="text-xl font-semibold">{course?.contestName}</h1>

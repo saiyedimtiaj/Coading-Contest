@@ -47,16 +47,17 @@ const ManageContest = () => {
     const handleUpdate = (id) => {
         Swal.fire({
             title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
+            text: "Are you sure to approve this contest",
+            icon: "question",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, Update it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axiosPublic.put(`/courses/${id}`)
+                axiosPublic.put(`/courses-status/${id}`)
                 .then(res=>{
+                  console.log(res.data);
                     if(res.data.modifiedCount > 0){
                         Swal.fire({
                             position: "center",

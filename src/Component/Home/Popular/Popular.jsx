@@ -18,6 +18,8 @@ const Popular = () => {
       if(isPending){
         return <p>Loading.....</p>
       }
+
+      const filterCourse = courses?.filter(course=>course.status !== 'panding')
     
     return (
         <div className="container mx-auto px-4 mt-20">
@@ -25,7 +27,7 @@ const Popular = () => {
             <hr className="border-2 border-green-700 max-w-[250px] rounded-sm mt-1 mb-4" />
             <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-5 my-5">
                 {
-                    courses?.map(course=><div key={course?._id} className="flex flex-col md:flex-row items-center  border-black border">
+                    filterCourse?.map(course=><div key={course?._id} className="flex flex-col md:flex-row items-center  border-black border">
                         <img className="w-full md:w-1/2 h-full" src={course?.image} alt="" />
                         <div className="px-2 py-4 space-y-1">
                             <h1 className="text-xl font-semibold">{course?.contestName}</h1>

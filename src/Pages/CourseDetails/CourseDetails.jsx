@@ -8,6 +8,12 @@ import useAuth from "../../Hooks/useAuth";
 
 
 const CourseDetails = () => {
+    const [days,setDays] = useState(0)
+    const [hours,setHours] = useState(0)
+    const [mins,setMins] = useState(0)
+    const [secs,setSecs] = useState(0)
+
+
     let [isOpen, setIsOpen] = useState(false);
     const {user} = useAuth()
     const {id}= useParams()
@@ -30,10 +36,21 @@ const CourseDetails = () => {
         image:course?.image,
         contestPrize: course?.contestPrize,
         category:course?.category,
+        name:user?.name,
+        userImage:user?.photoURL,
         email: user?.email,
         contestId:course?._id,
-        participationCount:course?.participationCount
+        participationCount:course?.participationCount,
+        dedline:course?.dedline
       }
+
+      const getTime = () => {
+        const time = Date.parse(course?.dedline)-Date.now()
+        setDays(Math.floor(time / (1000 * 60 * 60 * 24)))
+        setHours(Math.floor(time / (1000 * 60 * 60)%24))
+        setMins(Math.floor((time / 1000 / 60)%60))
+        setSecs(Math.floor((time / 1000 )%60))
+    }
 
 
     return (
@@ -45,7 +62,7 @@ const CourseDetails = () => {
             <div className="space-y-2">
                 <h1 className="text-xl font-semibold">CourseName : {course?.contestName}</h1>
                 <h1 className="text-2xl font-bold">Attempted : {course?.participationCount}</h1>
-                <Counte counter={course?.dedline}/>
+                <Counte getTime={getTime} days={days} hours={hours} mins={mins} secs={secs} dedline={course?.dedline}/>
                 <h1 className="text-xl  font-semibold">Contest Prize: $ {course?.contestPrize}</h1> 
                 <button onClick={()=>setIsOpen(true)} className="bg-black px-4 py-2 text-white font-medium" >Register</button>
             </div>
