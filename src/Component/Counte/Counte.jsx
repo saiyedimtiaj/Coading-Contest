@@ -5,9 +5,6 @@ import { useEffect } from "react";
 
 
 const Counte = ({days,hours,mins,secs,dedline,getTime}) => {
-    // const timeing = Date.parse(dedline)
-
-
    
     useEffect(()=>{
         const intervel = setInterval(()=>getTime(dedline),1000)

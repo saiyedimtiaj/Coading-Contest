@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import  logo from '../../assets/logo.png'
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const handleLogout = () => {
-    logOut()
-    .then(()=>{
+    logOut().then(() => {
       //
-    })
-  }
+    });
+  };
   const links = (
     <>
       <NavLink
@@ -63,7 +63,13 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="text-xl font-semibold">daisyUI</a>
+          <a className="text-xl font-semibold w-24 h-8 cursor-pointer">
+            <img
+              className="h-9"
+              src={logo}
+              alt=""
+            />
+          </a>
         </div>
         <div className="gap-5 navbar-end">
           {user ? (
@@ -83,11 +89,17 @@ const Navbar = () => {
                   </p>
                 </li>
                 <li className="my-3">
-                 <Link to='/dashboard' className="hover:bg-blue-950 px-2 py-2 rounded-none">
+                  <Link
+                    to="/dashboard"
+                    className="hover:bg-blue-950 px-2 py-2 rounded-none"
+                  >
                     Dashboard
-                 </Link>
+                  </Link>
                 </li>
-                <button onClick={handleLogout} className="bg-blue-600 hover:bg-blue-700 text-white py-2 w-full font-medium">
+                <button
+                  onClick={handleLogout}
+                  className="bg-blue-600 hover:bg-blue-700 text-white py-2 w-full font-medium"
+                >
                   Logout
                 </button>
               </ul>

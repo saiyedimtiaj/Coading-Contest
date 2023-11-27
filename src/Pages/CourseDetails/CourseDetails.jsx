@@ -5,6 +5,8 @@ import Counte from "../../Component/Counte/Counte";
 import { useState } from "react";
 import Model from "../../Component/Shared/Model/Model";
 import useAuth from "../../Hooks/useAuth";
+import WinnerDetails from "../../Component/WinnerDetails/WinnerDetails";
+import Swal from "sweetalert2";
 
 
 const CourseDetails = () => {
@@ -25,6 +27,19 @@ const CourseDetails = () => {
             return res.data
         }
       })
+
+      const handleOpen = () => {
+        if(Date.parse(course?.dedline) > Date.now()){
+           return setIsOpen(true)
+        }
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "The Contest is already End!!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+      }
 
 
       const closeModal = () => {
@@ -62,9 +77,12 @@ const CourseDetails = () => {
             <div className="space-y-2">
                 <h1 className="text-xl font-semibold">CourseName : {course?.contestName}</h1>
                 <h1 className="text-2xl font-bold">Attempted : {course?.participationCount}</h1>
-                <Counte getTime={getTime} days={days} hours={hours} mins={mins} secs={secs} dedline={course?.dedline}/>
+                {
+                    Date.parse(course?.dedline) > Date.now() ? <Counte getTime={getTime} days={days} hours={hours} mins={mins} secs={secs} dedline={course?.dedline}/> :
+                    <WinnerDetails name={course?.winnerName} image={course?.winnerImage} />
+                }
                 <h1 className="text-xl  font-semibold">Contest Prize: $ {course?.contestPrize}</h1> 
-                <button onClick={()=>setIsOpen(true)} className="bg-black px-4 py-2 text-white font-medium" >Register</button>
+                <button onClick={handleOpen} className="bg-black px-4 py-2 text-white font-medium" >Register</button>
             </div>
             <Model closeModal={closeModal} isOpen={isOpen} bookingInfo={bookingInfo} />
         </div>

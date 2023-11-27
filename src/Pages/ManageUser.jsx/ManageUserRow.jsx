@@ -44,7 +44,10 @@ const ManageUserRow = ({ user, refetch }) => {
         {user?.role === "admin" ? (
           <div className="badge badge-success gap-2">Admin</div>
         ) : (
+          <>
+          <div className="badge badge-info mr-2">{user?.role}</div>
           <div onClick={()=>setIsOpen(true)} className="badge cursor-pointer badge-neutral">Update</div>
+          </>
         )}
       </th>
       <ManageUserModel

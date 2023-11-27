@@ -3,11 +3,13 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 
 const Submition = () => {
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const {id} = useParams();
+    const {user} = useAuth()
 
     const {  data:course=[],refetch } = useQuery({
         queryKey: ['contest-winner-selection',id],
@@ -40,8 +42,8 @@ const Submition = () => {
         }else{
             Swal.fire({
                 title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
+                text: "Are you sure to sellect winner this contestor",
+                icon: "success",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
@@ -62,11 +64,21 @@ const Submition = () => {
                             refetch();
                           }
                     })
+                    const ContestWinnerInfo ={
+                      contestName : course?.contestName,
+                      contestInage : course?.image,
+                      winningPrice : course?.prizeMoney,
+                      winnerEmail: user?.email,
+                      hostBy: course?.creatorName
+                    }
+                    axiosSecure.post('/winners',ContestWinnerInfo)
+                    .then(()=>{
+                      
+                    })
                 }
               });
         }
     }
-
     
 
   return (

@@ -7,7 +7,7 @@ const RegisteredContest = () => {
     return (
         <div>
         <h1 className="text-3xl font-semibold text-center my-8">
-          My Registation
+          My Registation Contest
         </h1>
         <div className="overflow-x-auto">
           <table className="table">

@@ -16,6 +16,7 @@ import PageError from "../Pages/PageError/PageError";
 import CreatedContest from "../Pages/CreatedContest/CreatedContest";
 import Update from "../Pages/Update/Update";
 import Submition from "../Pages/Submition/Submition";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const Routes = createBrowserRouter([
@@ -30,7 +31,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path:'/course/:id',
-                element:<CourseDetails/>
+                element:<PrivateRoutes><CourseDetails/></PrivateRoutes>
             },
             {
                 path:'/allcontest',
@@ -48,7 +49,7 @@ const Routes = createBrowserRouter([
     },
     {
         path:'dashboard',
-        element:<DashboardLayout/>,
+        element:<PrivateRoutes><DashboardLayout/>,</PrivateRoutes>,
         children:[
             //Admin all Routes
             {
@@ -63,15 +64,15 @@ const Routes = createBrowserRouter([
             // user all routes
             {
                 path:'registeredcontest',
-                element:<RegisteredContest/>
+                element:<PrivateRoutes><RegisteredContest/></PrivateRoutes>
             },
             {
                 path:'winningcontest',
-                element:<WinningContest/>
+                element:<PrivateRoutes><WinningContest/></PrivateRoutes>
             },
             {
                 path:'myprofile',
-                element:<MyProfile/>
+                element:<PrivateRoutes><MyProfile/></PrivateRoutes>
             },
 
             //creator all routes
