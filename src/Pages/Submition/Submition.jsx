@@ -47,7 +47,7 @@ const Submition = () => {
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
+                confirmButtonText: "Yes, winner it!"
               }).then((result) => {
                 if (result.isConfirmed) {
                     axiosSecure.patch(`/select-winner/${userInfo.contestId}`,userInfo)
@@ -80,7 +80,7 @@ const Submition = () => {
         }
     }
     
-
+console.log(bookings);
   return (
     <div>
       <h1 className="text-3xl font-bold text-center my-8">

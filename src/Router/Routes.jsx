@@ -17,6 +17,7 @@ import CreatedContest from "../Pages/CreatedContest/CreatedContest";
 import Update from "../Pages/Update/Update";
 import Submition from "../Pages/Submition/Submition";
 import PrivateRoutes from "./PrivateRoutes";
+import AdminRoutes from "./AdminRoutes";
 
 
 const Routes = createBrowserRouter([
@@ -54,11 +55,11 @@ const Routes = createBrowserRouter([
             //Admin all Routes
             {
                 path:'manageuser',
-                element:<ManageUser/>
+                element:<AdminRoutes><ManageUser/></AdminRoutes>
             },
             {
                 path:'managecontest',
-                element:<ManageContest/>
+                element:<AdminRoutes><ManageContest/></AdminRoutes>
             },
 
             // user all routes

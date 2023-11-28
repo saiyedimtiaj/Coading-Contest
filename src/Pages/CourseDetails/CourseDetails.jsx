@@ -51,7 +51,7 @@ const CourseDetails = () => {
         image:course?.image,
         contestPrize: course?.contestPrize,
         category:course?.category,
-        name:user?.name,
+        name:user?.displayName,
         userImage:user?.photoURL,
         email: user?.email,
         contestId:course?._id,
