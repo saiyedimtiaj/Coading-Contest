@@ -43,7 +43,8 @@ const Register = () => {
                   name:name,
                   email:email,
                   image:image,
-                  role:'user'
+                  role:'user',
+                  winningMoney: 0
                 }
                 axiosPublic.post('/users',userInfo)
                 .then(res=>{

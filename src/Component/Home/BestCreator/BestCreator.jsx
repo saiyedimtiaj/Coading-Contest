@@ -19,7 +19,6 @@ const BestCreator = () => {
   if (isPending) {
     return <p>Loading.....</p>;
   }
-  console.log(courses);
   return (
     <div className="max-w-5xl mx-auto px-5 my-14">
       <div className="text-center max-w-4xl mx-auto">

@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://assingment-12-server-pi.vercel.app',
     withCredentials:true
   });
 

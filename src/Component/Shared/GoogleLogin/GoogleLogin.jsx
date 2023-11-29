@@ -26,7 +26,8 @@ const GoogleLogin = () => {
         name:res.user.displayName,
         email:res.user.email,
         image:res.user.photoURL,
-        role: 'user'
+        role: 'user',
+        winningMoney:0
       }
       axiosPublic.post('/users',userInfo)
       .then(res=>{

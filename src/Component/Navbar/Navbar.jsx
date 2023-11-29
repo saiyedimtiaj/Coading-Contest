@@ -27,6 +27,22 @@ const Navbar = () => {
       >
         All Contest
       </NavLink>
+      <NavLink
+        to="/compitions"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "border-b-2 border-green-600" : ""
+        }
+      >
+        Compition
+      </NavLink>
+      <NavLink
+        to="/practice"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "border-b-2 border-green-600" : ""
+        }
+      >
+        Practice
+      </NavLink>
     </>
   );
 

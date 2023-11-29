@@ -18,6 +18,10 @@ import Update from "../Pages/Update/Update";
 import Submition from "../Pages/Submition/Submition";
 import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
+import CreatorRoutes from "./CreatorRoutes";
+import Compitios from "../Pages/Compitions/Compitios";
+import Prectis from "../Pages/Prectic/Prectis";
+import Liderboard from "../Pages/Liderboard/Liderboard";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +42,14 @@ const Routes = createBrowserRouter([
                 path:'/allcontest',
                 element:<AllContest/>
             },
+            {
+                path:'/compitions',
+                element:<Compitios/>
+            },
+            {
+                path:'/practice',
+                element:<Prectis/>
+            }
         ]
     },
     {
@@ -64,6 +76,10 @@ const Routes = createBrowserRouter([
 
             // user all routes
             {
+                path:'liderboard',
+                element:<Liderboard/>
+            },
+            {
                 path:'registeredcontest',
                 element:<PrivateRoutes><RegisteredContest/></PrivateRoutes>
             },
@@ -80,19 +96,19 @@ const Routes = createBrowserRouter([
 
             {
                 path:'addcontest',
-                element:<AddContest/>
+                element:<CreatorRoutes><AddContest/></CreatorRoutes>
             },
             {
                 path:'createdcontest',
-                element:<CreatedContest/>
+                element:<CreatorRoutes><CreatedContest/></CreatorRoutes>
             },
             {
                 path:'createdcontest/update/:id',
-                element:<Update/>
+                element:<CreatorRoutes><Update/></CreatorRoutes>
             },
             {
                 path:'submition/:id',
-                element:<Submition/>
+                element:<CreatorRoutes><Submition/></CreatorRoutes>
             }
         ]
     }
