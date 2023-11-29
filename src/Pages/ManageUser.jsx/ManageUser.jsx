@@ -16,7 +16,7 @@ const ManageUser = () => {
 
   const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
-    queryKey: ["allusers"],
+    queryKey: ["allusers",currentPage],
     queryFn: async () => {
       const res = await axiosSecure.get(
         `/users?skip=${currentPage}&limit=${size}`
