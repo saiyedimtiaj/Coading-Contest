@@ -25,7 +25,7 @@ const AuthProvider = ({children}) => {
 
     const profileUpdate = (name,image) => {
         setLoading(true);
-        updateProfile(auth.currentUser,{
+        return updateProfile(auth.currentUser,{
             displayName: name, 
             photoURL: image
         })
@@ -48,7 +48,8 @@ const AuthProvider = ({children}) => {
         profileUpdate,
         logInUser,
         logOut,
-        googleLogin
+        googleLogin,
+        setLoading
     }
 
     useEffect(()=>{

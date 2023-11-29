@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import ProfileChart from "../../Component/ProfileChart/ProfileChart";
 
 const MyProfile = () => {
-  const { user, profileUpdate } = useAuth();
+  const { user, profileUpdate,setLoading } = useAuth();
   const {
     register,
     handleSubmit,
@@ -26,6 +26,9 @@ const MyProfile = () => {
       }).then((result) => {
         if (result.isConfirmed) {
            profileUpdate(name,image)
+           .then(()=>{
+            setLoading(false)
+           })
             Swal.fire({
                 position: "center",
                 icon: "success",
